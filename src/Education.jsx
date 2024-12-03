@@ -1,24 +1,28 @@
 import React from 'react';
 
-
 function Education() {
   return (
     <div
       style={{
         padding: '40px 20px',
         textAlign: 'center',
-        background: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)', // Gradient background
+        background: 'linear-gradient(180deg, #000, #333)', // Black gradient
         minHeight: '100vh', // Ensures full screen height
+        color: '#FFF',
+        display: 'flex', // Use flexbox
+        flexDirection: 'column', // Align items vertically
+        justifyContent: 'center', // Center content vertically
+        alignItems: 'center', // Center content horizontally
       }}
     >
       {/* Title Section */}
       <h1
         style={{
-          fontSize: '3em',
+          fontSize: '3.5em',
           marginBottom: '20px',
           color: '#FFF', // White text for visibility
           fontWeight: 'bold',
-          fontFamily: '"Poppins", sans-serif',
+          fontFamily: '"Roboto", sans-serif', // Modern sans-serif font
         }}
       >
         Education: From Elementary to College
@@ -27,86 +31,98 @@ function Education() {
       {/* Subtitle */}
       <p
         style={{
-          fontSize: '1.2em',
+          fontSize: '1.5em',
           color: '#FFF', // Subtle white for the description
           marginBottom: '40px',
-          fontFamily: '"Roboto", sans-serif',
+          fontFamily: '"Lora", serif', // Serif font for a more scholarly feel
         }}
       >
-        A glimpse into my academic journey.
+        A glimpse into my academic journey
       </p>
 
-      {/* Grid Container */}
+      {/* Image Grid */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '20px',
-          padding: '0 20px',
+          gridTemplateColumns: 'repeat(2, 1fr)', // Two columns per row
+          gap: '60px', // Space between the images
+          padding: '60px 0px',
+          width: '90%', // Adjust width as per your design
+ 
         }}
       >
-        {/* Education Cards */}
+        {/* Image Cards */}
         {[
           {
-            img: 'myPic\\Planza.jpg',
+            img: 'myPic/Planza.jpg',
             title: 'Planza San Fernando Elementary School',
           },
           {
-            img: 'myPic\\Pamukid.png',
+            img: 'myPic/Pamukid.png',
             title: 'Pamukid San Fernando High School',
           },
           {
-            img: 'myPic\\Sanfernando.jpg',
+            img: 'myPic/Sanfernando.jpg',
             title: 'San Fernando High School (Senior High)',
           },
           {
-            img: 'myPic\\NCF.jpg',
+            img: 'myPic/NCF.jpg',
             title: 'Naga College Foundation, Inc.',
           },
-        ].map((school, index) => (
+        ].map((item, index) => (
           <div
             key={index}
             style={{
-              backgroundColor: '#FFF', // White cards for contrast
+              backgroundColor: '#000', // Black card background
               borderRadius: '12px',
               overflow: 'hidden',
-              boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
-              borderTop: `6px solid ${
-                index % 2 === 0 ? '#6a11cb' : '#2575fc'
-              }`, // Alternating gradient colors as accent
+              boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)',
               transition: 'transform 0.3s, box-shadow 0.3s',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.4)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.1)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
             }}
           >
-            {/* School Image */}
-            <img
-              src={school.img}
-              alt={school.title}
+            {/* Image Section */}
+            <div
               style={{
-                width: '100%',
-                height: '200px',
-                objectFit: 'cover',
+                backgroundColor: '#000', // Match black theme
               }}
-            />
-            {/* School Info */}
-            <div style={{ padding: '15px', backgroundColor: '#f7f7f7' }}>
+            >
+              <img
+                src={item.img}
+                alt={item.title}
+                style={{
+                  width: 'auto',
+                  height: '350px',
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
+            {/* Title Section */}
+            <div
+              style={{
+                padding: '15px',
+                backgroundColor: '#FFF', // White background for text
+                color: '#000', // Black text for contrast
+                textAlign: 'center',
+                borderTop: '2px solid #000', // Add a black border on top of the text box
+              }}
+            >
               <p
                 style={{
                   fontSize: '1.1em',
-                  color: '#333',
                   margin: '0',
-                  fontFamily: '"Roboto", sans-serif',
+                  fontFamily: '"Lora", serif', // Using serif font to match subtitle feel
                   fontWeight: '500',
                 }}
               >
-                {school.title}
+                {item.title}
               </p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TopNav from './TopNav'; 
+import TopNav from './TopNav';
 import Home from './Home';
 import About from './About';
 import Education from './Education';
@@ -10,10 +10,10 @@ import Contact from './Contact';
 function App() {
   return (
     <div>
-      <Router>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <TopNav />
         <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Education" element={<Education />} />
