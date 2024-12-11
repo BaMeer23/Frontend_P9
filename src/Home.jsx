@@ -8,7 +8,10 @@ function Home() {
     borderRadius: '10px',
     boxShadow: '0 6px 14px rgba(0, 0, 0, 0.3)',
     marginLeft: '50px',
-    alignSelf: 'start', // Align to the top of the grid
+    alignSelf: 'start',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   };
 
   const rightDivStyle = {
@@ -17,7 +20,10 @@ function Home() {
     borderRadius: '10px',
     boxShadow: '0 6px 14px rgba(0, 0, 0, 0.3)',
     marginRight: '50px',
-    alignSelf: 'start', // Align to the top of the grid
+    alignSelf: 'start',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   };
 
   return (
@@ -35,28 +41,22 @@ function Home() {
     >
       {/* Left Bar */}
       <div style={leftDivStyle}>
-        <h3
+        <img
+          src="path/to/your/left-image.jpg"
+          alt="Left Image"
           style={{
-            color: '#fff',
-            marginBottom: '20px',
-            fontSize: '1.2rem',
-            textAlign: 'center',
+            width: '100%',
+            height: 'auto',
+            borderRadius: '8px',
           }}
-        >
-          Left Sidebar
-        </h3>
-        <p style={{ fontSize: '0.9rem', textAlign: 'justify', lineHeight: '1.5' }}>
-          This is the left container. You can add navigation links, recent updates,
-          or other content here. Make it dynamic or static depending on your
-          requirement.
-        </p>
+        />
       </div>
 
       {/* Main Content */}
       <div
         style={{
           display: 'grid',
-          gridTemplateRows: 'auto auto', // Separate rows for image and text
+          gridTemplateRows: 'auto auto',
           justifyContent: 'center',
           alignItems: 'center',
           maxWidth: '700px',
@@ -155,20 +155,15 @@ function Home() {
 
       {/* Right Bar */}
       <div style={rightDivStyle}>
-        <h3
+        <img
+          src="path/to/your/right-image.jpg"
+          alt="Right Image"
           style={{
-            color: '#fff',
-            marginBottom: '20px',
-            fontSize: '1.2rem',
-            textAlign: 'center',
+            width: '100%',
+            height: 'auto',
+            borderRadius: '8px',
           }}
-        >
-          Right Sidebar
-        </h3>
-        <p style={{ fontSize: '0.9rem', textAlign: 'justify', lineHeight: '1.5' }}>
-          This is the right container. You can add additional features, links, or
-          any supplementary content here.
-        </p>
+        />
       </div>
     </div>
   );
